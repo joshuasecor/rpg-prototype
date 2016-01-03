@@ -18,13 +18,27 @@ function damage(charId) {
   // Reduce initial damage by block percentage, then round down to nearest integer
   var finalDamage = Math.floor(realDamage * (1 - realBlock));
 
+  var specialMessage = '';
+
+  var randCritical = Math.random();
+	if(randCritical < characters[curChar]["critical"]) {
+		finalDamage = Math.floor(maxDamage * (1 - realBlock));
+		specialMessage = ' with a CRITICAL HIT';
+	};
+
+	var randAccuracy = Math.random();
+	if(randAccuracy > characters[curChar]["accuracy"]) {
+		finalDamage = 0;
+		specialMessage = ' and MISSED';
+	};
+
 	characters[charId]["hp"] = (characters[charId]["hp"] - finalDamage);
 
 	var newHp = characters[charId]["hp"];
 	$('#' + charId + ' .hp').text(newHp);
 
 	var charName = characters[charId]["title"];
-	$('#action').append("<p>You attacked "+ charName + "! " + charName + " lost " + finalDamage + " hp</p>");
+	$('#action').append("<p>You attacked "+ charName + specialMessage + "! " + charName + " lost " + finalDamage + " hp</p>");
 };
 
 var characters = {
@@ -37,8 +51,8 @@ var characters = {
 		"attack": [10, 30],
 		"defense": [0, 0.2],
 		"evasion": 0,
-		"critical": 0.1,
-		"accuracy": 0.9
+		"critical": 0.3,
+		"accuracy": 0.7
 	},
 	"char2": {
 		"id": 2,
@@ -49,8 +63,8 @@ var characters = {
 		"attack": [10, 30],
 		"defense": [0, 0.2],
 		"evasion": 0,
-		"critical": 0.1,
-		"accuracy": 0.9
+		"critical": 0.3,
+		"accuracy": 0.7
 	}
 };
 
