@@ -32,3 +32,8 @@ h2 {
 	padding: 10px 20px;
 	display: inline-block;
 }
+
+.action-container {
+	display: inline-block;
+	float: left;
+}
