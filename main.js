@@ -16,7 +16,7 @@ function damage(charId) {
   var realBlock = Math.random() * (maxBlock - minBlock) + minBlock;
 
   // Reduce initial damage by block percentage, then round down to nearest integer
-  var finalDamage = Math.floor(realDamage * realBlock);
+  var finalDamage = Math.floor(realDamage * (1 - realBlock));
 
 	characters[charId]["hp"] = (characters[charId]["hp"] - finalDamage);
 
@@ -35,8 +35,8 @@ var characters = {
 		"sp": 75,
 		"speed": 10,
 		"attack": [10, 30],
-		"defense": [0.3, 0.5],
-		"evasion": 1,
+		"defense": [0, 0.2],
+		"evasion": 0,
 		"critical": 0.1,
 		"accuracy": 0.9
 	},
@@ -47,8 +47,8 @@ var characters = {
 		"sp": 75,
 		"speed": 10,
 		"attack": [10, 30],
-		"defense": [0.3, 0.5],
-		"evasion": 1,
+		"defense": [0, 0.2],
+		"evasion": 0,
 		"critical": 0.1,
 		"accuracy": 0.9
 	}
