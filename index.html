@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RPG</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="main.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="charactersContainer">
+
+	<div id="char1" class="character" style="color: blue;">
+		<h2>Knight</h2>
+		<table cellpadding="5">
+		  <tr>
+		    <th>id</th>
+		    <td>1</td>
+		  </tr>
+		  <tr>
+		    <th>title</th>
+		    <td>Knight</td>
+		  </tr>
+		  <tr>
+		    <th>hp</th>
+		    <td class="hp">300</td>
+		  </tr>
+		  <tr>
+		    <th>sp</th>
+		    <td>75</td>
+		  </tr>
+		  <tr>
+		    <th>speed</th>
+		    <td>10</td>
+		  </tr>
+		  <tr>
+		    <th>attack</th>
+		    <td>[10,30]</td>
+		  </tr>
+		  <tr>
+		    <th>defense</th>
+		    <td>[0.3,0.5]</td>
+		  </tr>
+		  <tr>
+		    <th>evasion</th>
+		    <td>1.0</td>
+		  </tr>
+		  <tr>
+		    <th>critical</th>
+		    <td>0.1</td>
+		  </tr>
+		  <tr>
+		    <th>accuracy</th>
+		    <td>0.9</td>
+		  </tr>
+		</table>
+	</div>
+
+	<div id="char2" class="character" style="color: red;">
+		<h2>Computer</h2>
+		<table cellpadding="5">
+		  <tr>
+		    <th>id</th>
+		    <td>2</td>
+		  </tr>
+		  <tr>
+		    <th>title</th>
+		    <td>Computer</td>
+		  </tr>
+		  <tr>
+		    <th>hp</th>
+		    <td class="hp">300</td>
+		  </tr>
+		  <tr>
+		    <th>sp</th>
+		    <td>75</td>
+		  </tr>
+		  <tr>
+		    <th>speed</th>
+		    <td>10</td>
+		  </tr>
+		  <tr>
+		    <th>attack</th>
+		    <td>[10,30]</td>
+		  </tr>
+		  <tr>
+		    <th>defense</th>
+		    <td>[0.3,0.5]</td>
+		  </tr>
+		  <tr>
+		    <th>evasion</th>
+		    <td>1.0</td>
+		  </tr>
+		  <tr>
+		    <th>critical</th>
+		    <td>0.1</td>
+		  </tr>
+		  <tr>
+		    <th>accuracy</th>
+		    <td>0.9</td>
+		  </tr>
+		</table>
+	</div>
+
+</div>
+
+<div id="menu">
+
+	<h2>Menu</h2>
+
+	<ul>
+		<li onclick="attackSelect();">Attack</li>
+		<li>Skills</li>
+		<li>Charge</li>
+	</ul>
+
+</div>
+
+<h4 id="action"></h4>
+
+</body>
+</html>
